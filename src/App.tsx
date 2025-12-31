@@ -64,7 +64,7 @@ export default function App() {
     "Collage/Illustration": illustrationImages,
     "Photo Archive": photoArchiveImages,
     "Children's Books": [
-      { src: "images/monkeybook.gif", caption: "Book 1 description" }
+      { src: "images/monkey.gif", caption: "Book 1 description" }
     ],
     "Misc.": [
       { src: "images/colors.gif", caption: "Misc item 1 description" }
