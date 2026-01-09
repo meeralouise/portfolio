@@ -174,7 +174,7 @@ export default function App() {
       />
       <img
         src="images/balegde.gif"
-        alt="Blinkie 3"
+        alt="Blinkie 4"
         
       />
       </div>
