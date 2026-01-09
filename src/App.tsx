@@ -1,4 +1,7 @@
 import { useState } from "react";
+// App.tsx
+import './App.css';
+
 
 interface ImageItem {
   src: string;
@@ -44,6 +47,10 @@ export default function App() {
     fontFamily: "'Arial Black', Arial, sans-serif",
     fontWeight: 600,
     color: "white",
+    textShadow: `
+    1px 1px 0 rgba(0,0,0,0.4),
+   -1px -1px 0 rgba(255,255,255,0.4)
+  `,
     cursor: "pointer",
     margin: "0 20px",
     display: "inline-block",
@@ -132,8 +139,8 @@ export default function App() {
   </p>
   <p style={{ margin: "0 0 8px 0" }}>
     <strong>Instagram:</strong>{" "}
-    <a href="https://instagram.com/YOURHANDLE" target="_blank">
-      @YOURHANDLE
+    <a href="https://instagram.com/meerasunilproduct" target="_blank">
+      @meerasunilproduct
     </a>
   </p>
   <p style={{ margin: 0 }}>
@@ -150,22 +157,27 @@ export default function App() {
   </p>
 </div>
       {/* Blinkies */}
+      <div className="blinkies">
       <img
         src="images/bah.gif"
         alt="Blinkie 1"
-        style={{ position: "absolute", top: "20px", left: "30px", height: "30px" }}
       />
       <img
         src="images/WISHMELUCK.gif"
         alt="Blinkie 2"
-        style={{ position: "absolute", bottom: "50px", right: "60px", height: "30px" }}
+        
       />
       <img
         src="images/withdif.gif"
         alt="Blinkie 3"
-        style={{ position: "absolute", bottom: "10px", left: "10px", height: "30px" }}
+        
       />
-
+      <img
+        src="images/balegde.gif"
+        alt="Blinkie 3"
+        
+      />
+      </div>
       {/* Dynamic Modal */}
       {openModal && (
         <div
@@ -241,10 +253,8 @@ export default function App() {
               onClick={() => setOpenModal(null)}
               style={{
                 marginTop: "20px",
-                padding: "8px 16px",
                 fontSize: "16px",
                 cursor: "pointer",
-                borderRadius: "4px"
               }}
             >
               Close
