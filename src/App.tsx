@@ -7,6 +7,7 @@ interface ImageItem {
   src: string;
   caption: string;
   title?: string;
+  link?: string;
 }
 
 // FOLDER IMOPORTANTS PHOTO+POSTER+COLLAGE*****************
@@ -59,13 +60,13 @@ export default function App() {
 
   const modalContent: Record<string, ImageItem[]> = {
     Websites: [
-      { src: "images/igp.png", title: "Storytelling Workshop", caption: "live writing workshop + library. made using html/css/javascript, express.js, node.js, postgreSQL, render" },
-      { src: "images/bookworld.png", title: "My Reading World", caption: "book log that is also a cute collaborative world builder. users input books they’ve read and earn town building blocks." },
-      { src: "images/prompter.png", title: "Make Me Write", caption: "simple webtool that generates a writing exercise prompt. coded using html/css/javascript" },
-      { src: "images/babel.png", title: "The Library of Babel", caption: "an interactive reading experience of Luis Jorge Borge's Library of Babel - coded using html/css/javascript" },
-      { src: "images/noahsark.png", title: "Noah's Ark-ive", caption: "interactive archive of plushy toys found across the internet. each toy comes with a matching ship passenger ID card, crediting the creator of the plushy. coded using html/css/js" },
+      { src: "images/igp.png", title: "Storytelling Workshop", caption: "live writing workshop + library. made using html/css/javascript, express.js, node.js, postgreSQL, render", link: "https://imagegenerationproject.onrender.com/" },
+      { src: "images/bookworld.png", title: "My Reading World", caption: "book log that is also a cute collaborative world builder. users input books they’ve read and earn town building blocks.", link: "https://my-reading-world.vercel.app/" },
+      { src: "images/prompter.png", title: "Make Me Write", caption: "simple webtool that generates a writing exercise prompt. coded using html/css/javascript", link: "https://meeralouise.github.io/prompter/" },
+      { src: "images/babel.png", title: "The Library of Babel", caption: "an interactive reading experience of Luis Jorge Borge's Library of Babel - coded using html/css/javascript", link: "https://sunim094.interactive.rodeo/studio/project-1/index.html" },
+      { src: "images/noahsark.png", title: "Noah's Ark-ive", caption: "interactive archive of plushy toys found across the internet. each toy comes with a matching ship passenger ID card, crediting the creator of the plushy. coded using html/css/js", link: "https://meeralouise.github.io/Noah-s-Ark-ive/collage.html" },
       { src: "images/dossier.png", title: "Dossier", caption: "a comprehensive identity rebrand for fragrance company 'Dossier'" },
-      { src: "images/weedbag.png", title: "Weed Bag archive", caption: "archive of marijuana 8th packages sold in NYC collected through social media submissions. coded using html/css/javascript + Airtable‘s API" },
+      { src: "images/weedbag.png", title: "Weed Bag archive", caption: "archive of marijuana 8th packages sold in NYC collected through social media submissions. coded using html/css/javascript + Airtable‘s API", link: "https://meeralouise.github.io/portfolioveeone/archives/weedbag/windex.html" },
     ],
     Posters: posterImages,
     "Collage/Illustration": illustrationImages,
@@ -222,31 +223,50 @@ export default function App() {
                 justifyItems: "center"
               }}
             >
-              {modalContent[openModal].map((item, index) => (
-                <div key={index} style={{ textAlign: "center" }}>
-                  {item.title && <h3 style={{ marginBottom: "5px", fontSize: "16px", color: "#1F5E2E", }}>{item.title}</h3>}
-                  <img
-                    src={item.src}
-                    alt={item.caption}
-                    style={{
-                      width: "100%",
-                      maxHeight: openModal === "Photo Archive" ? "150px" : "300px",
-                      objectFit: "cover",
-                    }}
-                  />
-                  {item.caption && (
-                    <p style={{
-                      border: "2px solid white",
-                      padding: "2px 6px",
-                      color: "white",
-                      marginTop: "0px",
-                      backgroundColor: "rgba(0,0,0,0.2)",
-                    }}>
-                      {item.caption}
-                    </p>
-                  )}
-                </div>
-              ))}
+             {modalContent[openModal].map((item, index) => (
+  <div key={index} style={{ textAlign: "center" }}>
+    {item.title && <h3 style={{ marginBottom: "5px", fontSize: "16px", color: "#1F5E2E", }}>{item.title}</h3>}
+
+    {/* Wrap image in link if it exists */}
+    {item.link ? (
+      <a href={item.link} target="_blank" rel="noopener noreferrer">
+        <img
+          src={item.src}
+          alt={item.caption}
+          style={{
+            width: "100%",
+            maxHeight: openModal === "Photo Archive" ? "150px" : "300px",
+            objectFit: "cover",
+            cursor: "pointer"
+          }}
+        />
+      </a>
+    ) : (
+      <img
+        src={item.src}
+        alt={item.caption}
+        style={{
+          width: "100%",
+          maxHeight: openModal === "Photo Archive" ? "150px" : "300px",
+          objectFit: "cover",
+        }}
+      />
+    )}
+
+    {item.caption && (
+      <p style={{
+        border: "2px solid white",
+        padding: "2px 6px",
+        color: "white",
+        marginTop: "0px",
+        backgroundColor: "rgba(0,0,0,0.2)",
+      }}>
+        {item.caption}
+      </p>
+    )}
+  </div>
+))}
+
             </div>
 
             <button
