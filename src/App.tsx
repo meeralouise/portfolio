@@ -66,7 +66,9 @@ export default function App() {
       { src: "images/babel.png", title: "The Library of Babel", caption: "an interactive reading experience of Luis Jorge Borge's Library of Babel - coded using html/css/javascript", link: "https://sunim094.interactive.rodeo/studio/project-1/index.html" },
       { src: "images/noahsark.png", title: "Noah's Ark-ive", caption: "interactive archive of plushy toys found across the internet. each toy comes with a matching ship passenger ID card, crediting the creator of the plushy. coded using html/css/js", link: "https://meeralouise.github.io/Noah-s-Ark-ive/collage.html" },
       { src: "images/dossier.png", title: "Dossier", caption: "a comprehensive identity rebrand for fragrance company 'Dossier'" },
-      { src: "images/weedbag.png", title: "Weed Bag archive", caption: "archive of marijuana 8th packages sold in NYC collected through social media submissions. coded using html/css/javascript + Airtable‘s API", link: "https://meeralouise.github.io/portfolioveeone/archives/weedbag/windex.html" },
+      { src: "images/weedbag.png", title: "Weedbag Archive", caption: "archive of marijuana 8th packages sold in NYC collected through social media submissions. coded using html/css/javascript + Airtable‘s API", link: "https://meeralouise.github.io/portfolioveeone/archives/weedbag/windex.html" },
+      { src: "images/portone.gif", title: "Old attempt", caption: "a very old first attempt at a creative portfolio that I will never forget. such fun <3", link: "https://meeralouise.github.io/portfolioveeone/" },
+
     ],
     Posters: posterImages,
     "Collage/Illustration": illustrationImages,
