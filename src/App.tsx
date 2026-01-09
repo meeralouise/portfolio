@@ -45,9 +45,9 @@ export default function App() {
     fontWeight: 600,
     color: "white",
     cursor: "pointer",
-    margin: "0 10px",
+    margin: "0 20px",
     display: "inline-block",
-    fontSize: "60px",
+    fontSize: "70px",
   };
 
   const modalContent: Record<string, ImageItem[]> = {
@@ -64,10 +64,12 @@ export default function App() {
     "Collage/Illustration": illustrationImages,
     "Photo Archive": photoArchiveImages,
     "Children's Books": [
-      { src: "images/monkey.gif", caption: "Book 1 description" }
+      { src: "images/monkey.gif", title:"The Monkey with the Tom-Tom", caption: "Children’s storybook published as part of a collaboration between DERTbook and Parsons School of Design students.  Story was written by me as an adaptation the original Indian folktale. Ilustrations were done both by hand and digitally using mixed-media materials such as construction paper, fabric cutouts, printed assets. etc. Was pretended in tandem with my Colors baby-board book to a panel of designers at TODA design agency, where it was met with overwhelmingly positive reviews." },
+      { src: "images/colors.gif", title: "Why I Love Every Color!", caption: "Baby board book published as part of a collaboration between DERTbook and Parsons School of Design students. Story conceived and written by me. Was presented in tandem with my Monkey storybook to a panel of designers at TODA design agency, where it was met with overwhelmingly positive reviews." }
     ],
     "Misc.": [
-      { src: "images/colors.gif", caption: "Misc item 1 description" }
+      { src: "images/plane.jpg", caption: "" },
+      { src: "images/loremipsum.png", caption: "" },
     ]
   };
 
@@ -75,7 +77,7 @@ export default function App() {
     <div
       style={{
         position: "relative",
-        backgroundColor: "magenta",
+        background: "radial-gradient(circle at top, #FFFFFF 0%, #F2C6FF 30%, #C77DFF 55%, #FF4FD8 80%)",
         minHeight: "100vh",
         width: "100vw",
         paddingTop: "10px",
@@ -86,19 +88,67 @@ export default function App() {
         Meera Sunil portfolio
       </p>
 
-      {/* Portfolio Categories Row */}
-      <div style={{ marginBottom: "20px" }}>
-        {titles.map((title) => (
-          <span
-            key={title}
-            style={h1Style}
-            onClick={() => setOpenModal(title)}
-          >
-            {title}
-          </span>
-        ))}
-      </div>
+     {/* Portfolio Categories Row */}
+<div
+  style={{
+    marginBottom: "20px",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "12px",
+  }}
+>
+  {titles.map((title) => (
+    <span
+      key={title}
+      style={{
+        ...h1Style,
+        fontSize: "clamp(28px, 7vw, 70px)",
+        margin: "0 10px",
+      }}
+      onClick={() => setOpenModal(title)}
+    >
+      {title}
+    </span>
+  ))}
+</div>
 
+{/* Contact Box */}
+<div
+  style={{
+    margin: "20px auto",
+    padding: "16px 20px",
+    maxWidth: "420px",
+    backgroundColor: "rgba(255,255,255,0.85)",
+    border: "2px solid black",
+    fontFamily: "Arial",
+    fontSize: "14px",
+    lineHeight: "1.5",
+  }}
+>
+  <p style={{ margin: "0 0 8px 0" }}>
+    <strong>Email:</strong>{" "}
+    <a href="mailto:meera.sunil02@gmail.com">meera.sunil02@gmail.com</a>
+  </p>
+  <p style={{ margin: "0 0 8px 0" }}>
+    <strong>Instagram:</strong>{" "}
+    <a href="https://instagram.com/YOURHANDLE" target="_blank">
+      @YOURHANDLE
+    </a>
+  </p>
+  <p style={{ margin: 0 }}>
+    <strong>CV:</strong>{" "}
+    <a
+      href="https://drive.google.com/file/d/1Nf3_2_a5g2-Lu_7SIOkgVlLK0YyZ0LxV/view?usp=sharing"
+      target="_blank"
+    >
+      HIRE ME!
+    </a>
+  </p>
+  <p>
+    
+  </p>
+</div>
       {/* Blinkies */}
       <img
         src="images/bah.gif"
@@ -137,7 +187,7 @@ export default function App() {
           <div
             style={{
               backgroundColor: "white",
-              color: "white",
+              color: "green",
               fontFamily: "arial black",
               padding: "20px",
               width: "100%",
@@ -162,7 +212,7 @@ export default function App() {
             >
               {modalContent[openModal].map((item, index) => (
                 <div key={index} style={{ textAlign: "center" }}>
-                  {item.title && <h3 style={{ marginBottom: "5px", fontSize: "16px" }}>{item.title}</h3>}
+                  {item.title && <h3 style={{ marginBottom: "5px", fontSize: "16px", color: "#1F5E2E", }}>{item.title}</h3>}
                   <img
                     src={item.src}
                     alt={item.caption}
@@ -176,6 +226,7 @@ export default function App() {
                     <p style={{
                       border: "2px solid white",
                       padding: "2px 6px",
+                      color: "white",
                       marginTop: "0px",
                       backgroundColor: "rgba(0,0,0,0.2)",
                     }}>
