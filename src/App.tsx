@@ -80,6 +80,12 @@ export default function App() {
     "Misc.": [
       { src: "images/plane.jpg", caption: "" },
       { src: "images/loremipsum.png", caption: "" },
+      {src: "images/worldmeera.gif", caption:""},
+      {src: "images/typocomp.gif", caption:""},
+      {src: "images/weave1.jpg", caption:""},
+      {src: "images/weave2.jpg", caption:""},
+      {src: "images/weave3.jpg", caption:""},
+      
     ]
   };
 
@@ -136,15 +142,9 @@ export default function App() {
     lineHeight: "1.5",
   }}
 >
-  <p style={{ margin: "0 0 8px 0" }}>
+  <p style={{ margin: "0 0 0" }}>
     <strong>Email:</strong>{" "}
     <a href="mailto:meera.sunil02@gmail.com">meera.sunil02@gmail.com</a>
-  </p>
-  <p style={{ margin: "0 0 8px 0" }}>
-    <strong>Instagram:</strong>{" "}
-    <a href="https://instagram.com/meerasunilproduct" target="_blank">
-      @meerasunilproduct
-    </a>
   </p>
   <p style={{ margin: 0 }}>
     <strong>CV:</strong>{" "}
@@ -155,9 +155,16 @@ export default function App() {
       HIRE ME!
     </a>
   </p>
-  <p>
-    
-  </p>
+  <p style={{ margin: 0, fontSize: "13px" }}>
+  <strong>Elsewhere:</strong>{" "}
+  <a href="https://boxd.it/7BisZ" target="_blank">letterboxd</a> /{" "}
+  <a href="https://www.serializd.com/user/meergirl/profile" target="_blank">serializd</a> /{" "}
+  <a href="https://www.are.na/meera-sunil/channels" target="_blank">are.na</a> /{" "}
+  <a href="https://meerasunil.cargo.site/" target="_blank">cargo site</a> /{" "}
+  <a href="https://www.linkedin.com/in/meera-sunil-36bbb0248/" target="_blank">linkedin</a> /{" "}
+  <a href="https://www.instagram.com/meerasunilproduct/" target="_blank">instagram</a>
+</p>
+
 </div>
       {/* Blinkies */}
       <div className="blinkies">
