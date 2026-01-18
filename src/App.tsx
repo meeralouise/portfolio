@@ -1,5 +1,5 @@
 import { useState } from "react";
-// App.tsx
+
 import './App.css';
 
 
@@ -14,26 +14,28 @@ interface ImageItem {
 const photoArchiveGlob = import.meta.glob('./images/photo-archive/*.{png,jpg,jpeg,gif,JPG}', { eager: true });
 const photoArchiveImages: ImageItem[] = Object.values(photoArchiveGlob).map((img: any) => ({
   src: img.default,
-  caption: "" // no captions for Photo Archive
+  caption: "" 
 }));
 
 const posterGlob = import.meta.glob('./images/posters/*.{png,jpg,jpeg,gif}', { eager: true });
 console.log('Posters detected:', Object.keys(posterGlob));
 const posterImages: ImageItem[] = Object.values(posterGlob).map((img: any) => ({
   src: img.default,
-  caption: "" // add captions if you want
+  caption: "" 
 }));
 
 const illustrationGlob = import.meta.glob('./images/illustration/*.{png,jpg,jpeg,gif}', { eager: true });
 console.log('Illustrations detected:', Object.keys(illustrationGlob));
 const illustrationImages: ImageItem[] = Object.values(illustrationGlob).map((img: any) => ({
   src: img.default,
-  caption: "" // add captions if you want
+  caption: "" 
 }));
 
 // LANDING PAGE*****************
 export default function App() {
   const [openModal, setOpenModal] = useState<string | null>(null);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [fullscreenItem, setFullscreenItem] = useState<ImageItem | null>(null);
 
   const titles = [
     "Websites",
@@ -155,14 +157,15 @@ export default function App() {
       HIRE ME!
     </a>
   </p>
-  <p style={{ margin: 0, fontSize: "13px" }}>
+  <p style={{ margin: 0, fontSize: "13px", padding: "15px" }}>
   <strong>Elsewhere:</strong>{" "}
   <a href="https://boxd.it/7BisZ" target="_blank">letterboxd</a> /{" "}
   <a href="https://www.serializd.com/user/meergirl/profile" target="_blank">serializd</a> /{" "}
   <a href="https://www.are.na/meera-sunil/channels" target="_blank">are.na</a> /{" "}
   <a href="https://meerasunil.cargo.site/" target="_blank">cargo site</a> /{" "}
   <a href="https://www.linkedin.com/in/meera-sunil-36bbb0248/" target="_blank">linkedin</a> /{" "}
-  <a href="https://www.instagram.com/meerasunilproduct/" target="_blank">instagram</a>
+  <a href="https://www.instagram.com/meerasunilproduct/" target="_blank">instagram</a> /{" "}
+  <a href="https://open.spotify.com/user/meaeras?si=19ba5b0585944846">spotify</a> 
 </p>
 
 </div>
@@ -254,6 +257,10 @@ export default function App() {
       <img
         src={item.src}
         alt={item.caption}
+        onClick= {(e) => {
+          e.stopPropagation();
+          setFullscreenItem(item);
+        }}
         style={{
           width: "100%",
           maxHeight: openModal === "Photo Archive" ? "150px" : "300px",
@@ -291,6 +298,112 @@ export default function App() {
           </div>
         </div>
       )}
+      <button
+  onClick={() => setAboutOpen(true)}
+  style={{
+    position: "fixed",
+    bottom: "16px",
+    left: "16px",
+    fontFamily: "helvetica",
+    fontSize: "12px",
+    padding: "6px 10px",
+    backgroundColor: "transparent",
+    border: "2px solid yellow",
+    cursor: "pointer",
+    zIndex: 1000,
+  }}
+>
+  about me
+</button>
+
+{aboutOpen && (
+  <div
+    style={{
+      position: "fixed",
+      inset: 0,
+      backgroundColor: "rgba(0,0,0,0.6)",
+      zIndex: 999,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "40px",
+    }}
+    onClick={() => setAboutOpen(false)}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        backgroundColor: "white",
+        width: "100%",
+        maxWidth: "520px", // dead-center narrow column
+        padding: "40px 30px",
+        fontFamily: "Times New Roman",
+        lineHeight: "1.6",
+        border: "2px solid black",
+        textAlign: "left",
+      }}
+    >
+      <h2 style={{ textAlign: "center", marginBottom: "24px" }}>
+Hi! I'm Meera ✮⋆˙𓅪
+      </h2>
+
+      <p>
+     I am a designer and self-proclaimed media enthusiast based in Brooklyn NY. 
+    </p>
+      <p>
+      Originally from the DC suburbs of Maryland, I relocated to NYC for my BFA at Parsons School of Design. 
+      </p>
+
+      <p style={{ textAlign: "center", marginTop: "32px" }}>
+        ✿ ✿ ✿
+      </p>
+      <p>
+        This website was lovingly coded by me! Thank you for coming + shoot me an email for any inquiries!
+      </p>
+
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <button
+          onClick={() => setAboutOpen(false)}
+          style={{
+            border: "1px solid black",
+            background: "white",
+            padding: "6px 12px",
+            cursor: "pointer",
+          }}
+        >
+          close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+{fullscreenItem && (
+  <div
+    onClick={() => setFullscreenItem(null)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      backgroundColor: "rgba(0,0,0,0.9)",
+      zIndex: 2000,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "20px",
+    }}
+  >
+    <img
+      src={fullscreenItem.src}
+      alt={fullscreenItem.caption}
+      onClick={(e) => e.stopPropagation()} // prevent closing when clicking the image
+      style={{
+        maxWidth: "95vw",
+        maxHeight: "95vh",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+)}
+
     </div>
   );
 }
