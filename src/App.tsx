@@ -138,7 +138,7 @@ export default function App() {
     padding: "16px 20px",
     maxWidth: "420px",
     backgroundColor: "rgba(255,255,255,0.85)",
-    border: "2px solid black",
+    border: "2px doube gray",
     fontFamily: "Arial",
     fontSize: "14px",
     lineHeight: "1.5",
@@ -307,8 +307,8 @@ export default function App() {
     fontFamily: "helvetica",
     fontSize: "12px",
     padding: "6px 10px",
-    backgroundColor: "transparent",
-    border: "2px solid yellow",
+    backgroundColor: "rgba(255,255,255,0.85)",
+    border: "2px double gray",
     cursor: "pointer",
     zIndex: 1000,
   }}
@@ -335,7 +335,7 @@ export default function App() {
       style={{
         backgroundColor: "white",
         width: "100%",
-        maxWidth: "520px", // dead-center narrow column
+        maxWidth: "520px", 
         padding: "40px 30px",
         fontFamily: "Times New Roman",
         lineHeight: "1.6",
@@ -351,7 +351,7 @@ Hi! I'm Meera ✮⋆˙𓅪
      I am a designer and self-proclaimed media enthusiast based in Brooklyn NY. 
     </p>
       <p>
-      Originally from the DC suburbs of Maryland, I relocated to NYC for my BFA at Parsons School of Design. 
+      Originally from the DC suburbs of Maryland, I relocated to NYC for my BFA in communicaion design at Parsons School of Design. 
       </p>
 
       <p style={{ textAlign: "center", marginTop: "32px" }}>
