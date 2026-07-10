@@ -62,6 +62,8 @@ export default function App() {
 
   const modalContent: Record<string, ImageItem[]> = {
     Websites: [
+      { src: "images/stackluv.png", title: "Stacklove Central", caption: "collaborative web art piece where users all around the world make a collage together", link: "https://stacklovecentral.onrender.com/" },
+      { src: "images/phonetics.png", title: "Phonetic Translator", caption: "html/css/javascript website that breaks user input down into NATO’s phonetic spelling alphabet", link: "https://meeralouise.github.io/phonetic-translator/" },
       { src: "images/igp.png", title: "Storytelling Workshop", caption: "live writing workshop + library. made using html/css/javascript, express.js, node.js, postgreSQL, render", link: "https://imagegenerationproject.onrender.com/" },
       { src: "images/bookworld.png", title: "My Reading World", caption: "book log that is also a cute collaborative world builder. users input books they’ve read and earn town building blocks.", link: "https://my-reading-world.vercel.app/" },
       { src: "images/prompter.png", title: "Make Me Write", caption: "simple webtool that generates a writing exercise prompt. coded using html/css/javascript", link: "https://meeralouise.github.io/prompter/" },
