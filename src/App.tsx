@@ -353,7 +353,7 @@ Hi! I'm Meera ✮⋆˙𓅪
      I am a designer and self-proclaimed media enthusiast based in Brooklyn NY. 
     </p>
       <p>
-      Originally from the DC suburbs of Maryland, I relocated to NYC for my BFA in communicaion design at Parsons School of Design. 
+      Originally from the DC suburbs of Maryland, I relocated to NYC for my BFA in communication design at Parsons School of Design. 
       </p>
 
       <p style={{ textAlign: "center", marginTop: "32px" }}>
