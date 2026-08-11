@@ -153,7 +153,7 @@ export default function App() {
   <p style={{ margin: 0 }}>
     <strong>CV:</strong>{" "}
     <a
-      href="https://drive.google.com/file/d/1Nf3_2_a5g2-Lu_7SIOkgVlLK0YyZ0LxV/view?usp=sharing"
+      href="https://drive.google.com/file/d/1Qt-myZ1movii2MH1Iz7jyaqra3W1LRfU/view?usp=sharing"
       target="_blank"
     >
       HIRE ME!
